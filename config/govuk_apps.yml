@@ -489,3 +489,16 @@ places-manager:
     GOVUK_WEBSITE_ROOT: https://www.gov.uk
     PLEK_SERVICE_CONTENT_STORE_URI: https://www.gov.uk/api
     PLEK_SERVICE_SEARCH_API_URI: https://www.gov.uk/api
+
+content-tagger:
+  memory:
+    request: 224Mi
+    limit: 512Mi
+  repo_url: https://github.com/alphagov/content-tagger.git
+  port_env_var: PORT
+  database:
+    adapter: postgresql
+    image: postgres:17
+  dependencies:
+    - publishing-api
+  worker_command: ["bundle", "exec", "sidekiq", "-C", "./config/sidekiq.yml"] 

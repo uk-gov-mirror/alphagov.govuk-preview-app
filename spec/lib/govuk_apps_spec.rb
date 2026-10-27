@@ -13,7 +13,7 @@ RSpec.describe GovukApps do
       expect(described_class.app_names).to include(
         "frontend", "draft-frontend", "content-store", "draft-content-store", "publishing-api", "whitehall",
         "govuk-publishing-components", "govuk-content-publishing-guidance",
-        "collections", "feedback", "finder-frontend", "smart-answers", "places-manager"
+        "collections", "feedback", "finder-frontend", "smart-answers", "places-manager", "content-tagger"
       )
     end
   end
